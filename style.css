@@ -23,7 +23,7 @@ body {
 
 footer {
   align-self: flex-start;
-  margin: 20px 34px;
+  margin: 35px 51px;
 }
 
 footer a {
@@ -37,11 +37,13 @@ a img {
   width: 50px;
   height: auto;
   transition: 0.3s;
-  box-shadow: 10px red;
+  border-radius: 50%;
+  box-shadow: -4px 9px 8px #3e6dcc;
 }
 
 a img:hover {
   margin: -5px;
+  box-shadow: -4px 9px 12px #1e4ba3;
   width: 60px;
   height: auto;
 }
