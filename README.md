@@ -12,3 +12,6 @@
 
 ### Live Preview
 - [Github Pages](https://mehrab-farhadzadeh.github.io/odin-foundations-calculator/)
+
+### Credits
+- Background image: [Created by Harryarts / Freepik](https://www.freepik.com/vectors/blue-polygon)
