@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url("images/abstract-blue-geometric-shapes-background/17545.jpg")
+    bottom center;
+  background-color: #a4d3fe;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+}
