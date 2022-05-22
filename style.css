@@ -20,7 +20,9 @@ body {
   align-items: center;
   justify-content: space-between;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+}
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
 }
 
 div.screen {
@@ -28,46 +30,20 @@ div.screen {
   text-align: right;
 }
 div.screen .history {
-  color: #484848;
   margin-bottom: 1rem;
   font-size: 1.1rem;
   font-weight: 400;
 }
 div.screen .result {
-  color: #323232;
   font-size: 2.5rem;
-}
-div.screen .history.black {
-  color: #aaa;
-}
-div.screen .result.black {
-  color: #eee;
+  font-weight: 500;
 }
 
 div.calculator {
-  /* Note: backdrop-filter has minimal browser support */
   margin: 2rem 1rem;
   padding: 2rem;
   border-radius: 39px;
   max-width: 700px;
-}
-div.calculator.glass {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.2),
-    rgba(47, 150, 208, 0.2)
-  );
-  backdrop-filter: blur(1rem);
-  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
-    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
-}
-div.calculator.white {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35);
-}
-div.calculator.black {
-  background-color: rgba(20, 20, 20, 0.95);
-  box-shadow: 0 0 1rem rgba(191, 211, 223, 0.35);
 }
 
 div.calculator .buttons {
@@ -79,41 +55,44 @@ button {
   color: white;
   border-radius: 1rem;
   border-style: none;
-  width: 5rem;
-  height: 5rem;
+  min-width: 5rem;
+  min-height: 5rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 2.5rem;
 }
-button.glass {
-  background-color: rgba(47, 150, 208, 0.2);
-  backdrop-filter: blur(0.3rem);
-  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
-    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
+
+button#ac {
+  font-weight: 400;
 }
-button.white {
-  background-color: rgba(255, 255, 255);
-  color: #1198e6;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137);
+/* Centering */
+button#backspace,
+button#multiply,
+button#dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-button.black {
-  background-color: rgb(20, 20, 20);
-  color: #1198e6;
-  box-shadow: -0.3rem -0.3rem 0.5rem rgba(132, 204, 246, 0.137);
+button#backspace i {
+  font-size: inherit;
 }
-button.glass:hover {
-  box-shadow: 0 0 1rem rgba(151, 216, 253, 0.749),
-    inset 0 0 0.2em rgba(142, 212, 252, 0.757);
+button#multiply span {
+  margin-bottom: -1.1rem;
 }
-button.white:hover {
-  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(5, 44, 66, 0.137);
-}
-button.black:hover {
-  box-shadow: inset -0.14rem -0.14rem 0.5rem rgba(233, 244, 250, 0.137);
+button#dot span {
+  margin-top: -1.35rem;
 }
 
-.disable-dbl-tap-zoom {
-  touch-action: manipulation;
+button#equal {
+  transition: 100ms;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+button#num0 {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 footer {
