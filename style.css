@@ -46,16 +46,18 @@ div.calculator {
   );
   backdrop-filter: blur(1rem);
   /* Note: backdrop-filter has minimal browser support */
-  margin: 3rem 1rem;
+  margin: 2rem 1rem;
   padding: 2rem;
   border-radius: 39px;
+  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
+    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
   max-width: 700px;
 }
 
 div.calculator .buttons {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 1em;
+  gap: 1.5em 1em;
 }
 button {
   background-color: rgba(47, 150, 208, 0.2);
@@ -63,12 +65,22 @@ button {
   color: white;
   border-radius: 1rem;
   border-style: none;
-  border: 1px solid rgba(68, 170, 236, 0.8);
+  /* border: 1px solid rgba(68, 170, 236, 0.8); */
+  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
+    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
   width: 5rem;
   height: 5rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 2.5rem;
+}
+button:hover {
+  box-shadow: 0 0 1rem rgba(151, 216, 253, 0.749),
+    inset 0 0 0.2em rgba(142, 212, 252, 0.757);
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
 }
 
 footer {
@@ -80,11 +92,13 @@ a img {
   width: 3.5rem;
   height: auto;
   border-radius: 50%;
-  box-shadow: -4px 9px 8px rgb(105, 200, 255);
+  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
+    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
 }
 a img:hover {
   margin: -0.25rem;
-  box-shadow: -4px 9px 12px rgb(153, 218, 255);
+  box-shadow: 0 0 1rem rgba(75, 189, 255, 0.614),
+    inset 0 0 0.2em rgba(59, 183, 255, 0.592);
   width: 4rem;
   height: auto;
 }
