@@ -83,7 +83,7 @@ button#dot span {
   margin-top: -1.35rem;
 }
 
-button#equal {
+button#equals {
   transition: 100ms;
   grid-row-start: 4;
   grid-row-end: 6;

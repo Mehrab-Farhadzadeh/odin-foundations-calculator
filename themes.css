@@ -42,7 +42,7 @@ button#plus.glass {
   background-color: #9ed4f1;
   box-shadow: 0 0 0.5rem #b2e4ff, inset 0 0 0.5em #b2e4ff;
 }
-button#equal.glass {
+button#equals.glass {
   color: white;
   background-color: #0a8cd7;
   box-shadow: 0 0 0.6rem #5fc4ff, inset 0 0 1em #5dc2fcf7;
@@ -54,7 +54,7 @@ button#plus.glass:hover {
   color: #094669;
   box-shadow: 0 0 1rem #0d5a86, inset 0 0 1.2em #ccedff;
 }
-button#equal.glass:hover {
+button#equals.glass:hover {
   color: #0f537a;
   box-shadow: 0 0 1rem #ace0fe, inset 0 0 1.5em #bbe6fff7;
 }
@@ -94,7 +94,7 @@ button#plus.white {
   color: #109dff;
   background-color: #ade2ff;
 }
-button#equal.white {
+button#equals.white {
   color: #b2daff;
   background-color: #19acff;
 }
@@ -104,7 +104,7 @@ button#minus.white:hover,
 button#plus.white:hover {
   color: #094669;
 }
-button#equal.white:hover {
+button#equals.white:hover {
   color: #0f537a;
 } */
 
@@ -144,7 +144,7 @@ button#plus.black {
   color: #339dff;
   background-color: #005db2;
 }
-button#equal.black {
+button#equals.black {
   color: #b2daff;
   background-color: #1991ff;
 }
@@ -156,6 +156,6 @@ button#divide.black:hover,
 button#multiply.black:hover,
 button#minus.black:hover,
 button#plus.black:hover,
-button#equal.black:hover {
+button#equals.black:hover {
   color: #063753;
 }
