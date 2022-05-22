@@ -28,8 +28,8 @@ body {
 div.calculator {
   margin: 2rem 1rem;
   padding: 2rem;
-  border-radius: 39px;
-  max-width: 700px;
+  border-radius: 2.5rem;
+  max-width: 40rem;
 }
 div.screen {
   margin: 0rem 0rem 3rem;
@@ -50,7 +50,7 @@ div.calculator .buttons {
   grid-template-columns: auto auto auto auto;
   gap: 1.5em 1em;
 }
-button {
+.calculator button {
   color: white;
   border-radius: 1rem;
   border-style: none;
@@ -95,10 +95,27 @@ button#num0 {
 }
 
 footer {
-  margin: 0 3.5vw 3.5vh;
-  align-self: flex-start;
+  background-color: rgba(255, 255, 255, 0.252);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.8rem;
 }
-a img {
+footer div.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer a img {
   transition: 0.3s;
   width: 3.5rem;
   height: auto;
@@ -106,10 +123,68 @@ a img {
   box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
     inset 0 0 0.2em rgba(5, 44, 66, 0.35);
 }
-a img:hover {
+footer a img:hover {
   margin: -0.25rem;
   box-shadow: 0 0 1rem rgba(75, 189, 255, 0.614),
     inset 0 0 0.2em rgba(59, 183, 255, 0.592);
   width: 4rem;
   height: auto;
+}
+footer div.footer p {
+  color: #333;
+  font-size: x-small;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Theme buttons */
+footer div.themePalette {
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer div.themePalette button {
+  border-radius: 1.5rem;
+  border-style: none;
+  width: 3.8rem;
+  height: 2.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+div.themePalette button.white i,
+div.themePalette button.glass img,
+div.themePalette button.black img {
+  width: 1rem;
+  height: auto;
+  font-size: 1rem;
+}
+div.themePalette button.white,
+div.themePalette button.glass,
+div.themePalette button.black {
+  transition: 0.4s;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.themePalette button.white {
+  border: 1px #333 solid;
+}
+div.themePalette button.glass {
+  border: 1px #0e3c56 solid;
+}
+div.themePalette button.black {
+  border: 1px #ddd solid;
+}
+
+div.themePalette button.white:hover,
+div.themePalette button.glass:hover,
+div.themePalette button.black:hover {
+  box-shadow: none;
+  height: 3rem;
 }
