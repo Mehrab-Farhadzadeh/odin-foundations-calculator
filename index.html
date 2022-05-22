@@ -6,20 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>Calculator</title>
 </head>
 
-<body>
-  <div class="calculator disable-dbl-tap-zoom glass">
+<body class="disable-dbl-tap-zoom">
+  <div class="calculator glass">
     <div class="screen">
-      <div class="history glass">6000/2+3227*2</div>
+      <div class="history glass">6000<span class="operator">/</span>2<span class="operator">+</span>3227<span
+          class="operator">*</span>2</div>
       <div class="result glass">=1,234,567,890</div>
     </div>
     <div class="buttons">
       <button class="glass" id="ac">Ac</button>
-      <button class="glass" id="delete">🔙</button>
+      <button class="glass" id="backspace"><i class="material-icons">backspace</i></button>
       <button class="glass" id="divide">/</button>
-      <button class="glass" id="multiply">*</button>
+      <button class="glass" id="multiply"><span>*</span></button>
 
       <button class="glass" id="num7">7</button>
       <button class="glass" id="num8">8</button>
@@ -37,7 +40,7 @@
       <button class="glass" id="equal">=</button>
 
       <button class="glass" id="num0">0</button>
-      <button class="glass" id="dot">.</button>
+      <button class="glass" id="dot"><span>.</span></button>
     </div>
   </div>
 
