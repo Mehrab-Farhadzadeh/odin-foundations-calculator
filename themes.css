@@ -1,0 +1,161 @@
+/* Glass */
+div.screen .history.glass {
+  color: #484848;
+}
+div.screen .history.glass .operator {
+  color: #f1f9ff;
+}
+div.screen .result.glass {
+  color: #323232;
+}
+div.calculator.glass {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2),
+    rgba(47, 150, 208, 0.2)
+  );
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
+    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
+}
+button.glass {
+  background-color: rgba(47, 150, 208, 0.2);
+  backdrop-filter: blur(0.3rem);
+  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
+    inset 0 0 0.2em rgba(5, 44, 66, 0.35);
+}
+button.glass:hover {
+  box-shadow: 0 0 1.4rem rgba(151, 216, 253, 0.749),
+    inset 0 0 0.8em rgba(142, 212, 252, 0.757);
+}
+button#ac.glass {
+  color: #0569a3;
+}
+button#backspace.glass {
+  color: #b011119c;
+}
+button#divide.glass,
+button#multiply.glass,
+button#minus.glass,
+button#plus.glass {
+  color: #0d5a86;
+  background-color: #9ed4f1;
+  box-shadow: 0 0 0.5rem #b2e4ff, inset 0 0 0.5em #b2e4ff;
+}
+button#equal.glass {
+  color: white;
+  background-color: #0a8cd7;
+  box-shadow: 0 0 0.6rem #5fc4ff, inset 0 0 1em #5dc2fcf7;
+}
+button#divide.glass:hover,
+button#multiply.glass:hover,
+button#minus.glass:hover,
+button#plus.glass:hover {
+  color: #094669;
+  box-shadow: 0 0 1rem #0d5a86, inset 0 0 1.2em #ccedff;
+}
+button#equal.glass:hover {
+  color: #0f537a;
+  box-shadow: 0 0 1rem #ace0fe, inset 0 0 1.5em #bbe6fff7;
+}
+
+/* White */
+div.screen .history.white {
+  color: #818181;
+}
+div.screen .history.white .operator {
+  color: #24A5FF;
+}
+div.screen .result.white {
+  color: #424242;
+}
+div.calculator.white {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35);
+}
+button.white {
+  color: #38b9ff;
+  background-color: rgba(255, 255, 255);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137);
+}
+button.white:hover {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(5, 44, 66, 0.137);
+}
+button#ac.white {
+  color: #858585;
+}
+button#backspace.white {
+  color: #b0111197;
+}
+button#divide.white,
+button#multiply.white,
+button#minus.white,
+button#plus.white {
+  color: #109dff;
+  background-color: #ade2ff;
+}
+button#equal.white {
+  color: #b2daff;
+  background-color: #19acff;
+}
+/* button#divide.white:hover,
+button#multiply.white:hover,
+button#minus.white:hover,
+button#plus.white:hover {
+  color: #094669;
+}
+button#equal.white:hover {
+  color: #0f537a;
+} */
+
+/* Black */
+div.screen .history.black {
+  color: #aaa;
+}
+div.screen .history.black .operator {
+  color: #24A5FF;
+}
+div.screen .result.black {
+  color: #eee;
+}
+div.calculator.black {
+  background: linear-gradient(191.34deg, #17181a -4.95%, #17181a 103.74%);
+  box-shadow: 0 0 1rem rgba(4, 48, 76, 0.656);
+}
+button.black {
+  color: #29a8ff;
+  background-color: #303136;
+}
+button.black:hover {
+  box-shadow: inset 0 0 10em rgba(142, 212, 252, 0.257);
+}
+button#ac.black {
+  color: #a5a5a5;
+  background-color: #616161;
+}
+button#backspace.black {
+  color: #d36d6dfe;
+  background-color: #616161;
+}
+button#divide.black,
+button#multiply.black,
+button#minus.black,
+button#plus.black {
+  color: #339dff;
+  background-color: #005db2;
+}
+button#equal.black {
+  color: #b2daff;
+  background-color: #1991ff;
+}
+button#ac.black:hover,
+button#backspace.black:hover {
+  box-shadow: inset 0 0 10em rgba(0, 0, 0, 0.357);
+}
+button#divide.black:hover,
+button#multiply.black:hover,
+button#minus.black:hover,
+button#plus.black:hover,
+button#equal.black:hover {
+  color: #063753;
+}
