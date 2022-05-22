@@ -1,48 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 * {
   box-sizing: border-box;
 }
 body {
-  background: url("images/abstract-blue-geometric-shapes-background/17545.jpg");
-  background-color: #d6f0ff;
+  background: url("images/low-poly-blue-background.jpg");
+  background-color: rgba(47, 150, 208);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
 }
-
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+div.screen {
+  margin: 0rem 0rem 2rem;
+  text-align: right;
+}
+div.screen .history {
+  color: #484848;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+div.screen .result {
+  color: #323232;
+  font-size: 2.5rem;
+}
+
+div.calculator {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2),
+    rgba(47, 150, 208, 0.2)
+  );
+  backdrop-filter: blur(1rem);
+  /* Note: backdrop-filter has minimal browser support */
+  margin: 3rem 1rem;
+  padding: 2rem;
+  border-radius: 39px;
+  max-width: 700px;
+}
+
+div.calculator .buttons {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1em;
+}
+button {
+  background-color: rgba(47, 150, 208, 0.2);
+  backdrop-filter: blur(0.3rem);
+  color: white;
+  border-radius: 1rem;
+  border-style: none;
+  border: 1px solid rgba(68, 170, 236, 0.8);
+  width: 5rem;
+  height: 5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
 }
 
 footer {
+  margin: 0 3.5vw 3.5vh;
   align-self: flex-start;
-  margin: 3.5vh 3.5vw;
 }
-
-footer a {
-  font-family: sans-serif;
-  font-size: small;
-  text-decoration: none;
-  color: #093890;
-}
-
 a img {
+  transition: 0.3s;
   width: 3.5rem;
   height: auto;
-  transition: 0.3s;
   border-radius: 50%;
-  box-shadow: -4px 9px 8px #3e6dcc;
+  box-shadow: -4px 9px 8px rgb(105, 200, 255);
 }
-
 a img:hover {
   margin: -0.25rem;
-  box-shadow: -4px 9px 12px #1e4ba3;
+  box-shadow: -4px 9px 12px rgb(153, 218, 255);
   width: 4rem;
   height: auto;
 }
