@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  transition: 400ms
+  transition: 400ms;
 }
 body {
   background: url("images/low-poly-blue-background.jpg");
@@ -95,7 +95,6 @@ button#num0 {
 }
 
 footer {
-  background-color: rgba(255, 255, 255, 0.252);
   margin-bottom: 2rem;
   padding: 1rem;
   border-radius: 2.5rem;
@@ -139,7 +138,7 @@ footer div.footer p {
   flex-shrink: 0;
 }
 
-/* Theme buttons */
+/* Theme Palette buttons */
 footer div.themePalette {
   margin-right: 1rem;
   display: flex;
@@ -156,21 +155,16 @@ footer div.themePalette button {
   font-weight: 500;
   font-size: 1.5rem;
   cursor: pointer;
-}
-div.themePalette button.white i,
-div.themePalette button.glass img,
-div.themePalette button.black img {
-  width: 1rem;
-  height: auto;
-  font-size: 1rem;
-}
-div.themePalette button.white,
-div.themePalette button.glass,
-div.themePalette button.black {
   box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+div.themePalette button i,
+div.themePalette button img {
+  width: 1rem;
+  height: auto;
+  font-size: 1rem;
 }
 div.themePalette button.white {
   border: 1px #333 solid;
@@ -181,10 +175,7 @@ div.themePalette button.glass {
 div.themePalette button.black {
   border: 1px #ddd solid;
 }
-
-div.themePalette button.white:hover,
-div.themePalette button.glass:hover,
-div.themePalette button.black:hover {
+div.themePalette button:hover {
   box-shadow: none;
   height: 3rem;
 }
