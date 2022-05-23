@@ -40,23 +40,24 @@ button#minus.glass,
 button#plus.glass {
   color: #0d5a86;
   background-color: #9ed4f1;
-  box-shadow: 0 0 0.5rem #b2e4ff, inset 0 0 0.5em #b2e4ff;
+  box-shadow: 0 0 1rem #0a5f8d96, inset 0 0 0.2em #0a5f8d70;
 }
 button#equals.glass {
   color: white;
   background-color: #0a8cd7;
-  box-shadow: 0 0 0.6rem #5fc4ff, inset 0 0 1em #5dc2fcf7;
+  box-shadow: 0 0 0.8rem #5fc4ff, inset 0 0 0.8em #5dc2fcf7;
 }
 button#divide.glass:hover,
 button#multiply.glass:hover,
 button#minus.glass:hover,
 button#plus.glass:hover {
   color: #094669;
-  box-shadow: 0 0 1rem #0d5a86, inset 0 0 1.2em #ccedff;
+  box-shadow: 0 0 0.6rem rgba(170, 225, 255, 0.775),
+    inset 0 0 0.6em rgba(170, 225, 255, 0.975);
 }
 button#equals.glass:hover {
   color: #0f537a;
-  box-shadow: 0 0 1rem #ace0fe, inset 0 0 1.5em #bbe6fff7;
+  box-shadow: 0 0 1rem #ace0fe, inset 0 0 1em #bbe6fff7;
 }
 
 /* White */
@@ -68,7 +69,7 @@ div.screen .history.white {
   color: #818181;
 }
 div.screen .history.white .operator {
-  color: #24A5FF;
+  color: #24a5ff;
 }
 div.screen .result.white {
   color: #424242;
@@ -76,11 +77,14 @@ div.screen .result.white {
 button.white {
   color: #38b9ff;
   background-color: rgba(255, 255, 255);
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137),
+    inset 0 0 0 rgba(5, 44, 66, 0.137);
 }
 button.white:hover {
-  box-shadow: inset 0.2rem 0.2rem 0.5rem rgba(5, 44, 66, 0.137);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137),
+    inset 0 0 10rem rgba(106, 203, 255, 0.15);
 }
+
 button#ac.white {
   color: #858585;
 }
@@ -98,6 +102,20 @@ button#equals.white {
   color: #b2daff;
   background-color: #19acff;
 }
+button#divide.white:hover,
+button#multiply.white:hover,
+button#minus.white:hover,
+button#plus.white:hover {
+  color: white;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137),
+    inset 0 0 10rem rgba(17, 82, 120, 0.2);
+}
+button#equals.white:hover {
+  color: #094669;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(5, 44, 66, 0.137),
+    inset 0 0 10rem #3f9acf;
+}
+
 
 /* Black */
 div.calculator.black {
@@ -108,7 +126,7 @@ div.screen .history.black {
   color: #aaa;
 }
 div.screen .history.black .operator {
-  color: #24A5FF;
+  color: #24a5ff;
 }
 div.screen .result.black {
   color: #eee;
