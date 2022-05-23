@@ -115,7 +115,6 @@ footer a {
   align-items: center;
 }
 footer a img {
-  transition: 0.2s;
   width: 3.5rem;
   height: auto;
   border-radius: 50%;
@@ -123,11 +122,9 @@ footer a img {
     inset 0 0 0.2em rgba(5, 44, 66, 0.35);
 }
 footer a img:hover {
-  margin: -0.25rem;
-  box-shadow: 0 0 1rem rgba(75, 189, 255, 0.614),
-    inset 0 0 0.2em rgba(59, 183, 255, 0.592);
-  width: 4rem;
-  height: auto;
+  transform: rotate(360deg) scale(1.2);
+  box-shadow: 0 0 1rem rgba(75, 189, 255, 0.66),
+    inset 0 0 0.4em rgba(59, 183, 255, 0.611);
 }
 footer div.footer p {
   color: #333;
