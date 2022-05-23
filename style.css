@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  transition: 400ms
 }
 body {
   background: url("images/low-poly-blue-background.jpg");
@@ -83,7 +84,6 @@ button#dot span {
 }
 
 button#equals {
-  transition: 100ms;
   grid-row-start: 4;
   grid-row-end: 6;
   grid-column-start: 4;
@@ -116,7 +116,7 @@ footer a {
   align-items: center;
 }
 footer a img {
-  transition: 0.3s;
+  transition: 0.2s;
   width: 3.5rem;
   height: auto;
   border-radius: 50%;
@@ -136,6 +136,7 @@ footer div.footer p {
   margin: 0;
   padding: 0;
   text-align: center;
+  flex-shrink: 0;
 }
 
 /* Theme buttons */
@@ -166,7 +167,6 @@ div.themePalette button.black img {
 div.themePalette button.white,
 div.themePalette button.glass,
 div.themePalette button.black {
-  transition: 0.4s;
   box-shadow: none;
   display: flex;
   justify-content: center;
