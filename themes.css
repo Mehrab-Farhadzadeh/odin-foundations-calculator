@@ -59,6 +59,9 @@ button#equals.glass:hover {
   color: #0f537a;
   box-shadow: 0 0 1rem #ace0fe, inset 0 0 1em #bbe6fff7;
 }
+footer.glass {
+  background-color: rgba(136, 205, 246, 0.2);
+}
 
 /* White */
 div.calculator.white {
@@ -116,8 +119,15 @@ button#equals.white:hover {
     inset 0 0 10rem #3f9acf;
 }
 
+footer.white {
+  background-color: rgba(204, 236, 255, 0.553);
+}
 
 /* Black */
+body.black {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/low-poly-blue-background.jpg");
+}
 div.calculator.black {
   background: linear-gradient(191.34deg, #17181a -4.95%, #17181a 103.74%);
   box-shadow: 0 0 1rem rgba(4, 48, 76, 0.656);
@@ -167,4 +177,20 @@ button#minus.black:hover,
 button#plus.black:hover,
 button#equals.black:hover {
   color: #063753;
+}
+footer.black {
+  background-color: rgba(136, 205, 246, 0.1);
+}
+footer.black .footer img {
+  filter: brightness(80%);
+}
+footer.black .footer p {
+  color: #ddd;
+}
+footer.black .themePalette button.white {
+  color: #1e86be;
+  background-color: #d0d0e0;
+}
+footer.black .themePalette button.black {
+  border-color: #ddd;
 }
