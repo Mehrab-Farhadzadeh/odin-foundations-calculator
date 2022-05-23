@@ -1,38 +1,51 @@
-// Themes Changer
-let currentTheme = "glass";
-
-const themeButtonWhite = document.querySelector(".themePalette button.white");
-const themeButtonGlass = document.querySelector(".themePalette button.glass");
-const themeButtonBlack = document.querySelector(".themePalette button.black");
-
-themeButtonWhite.addEventListener("click", changeTheme);
-themeButtonGlass.addEventListener("click", changeTheme);
-themeButtonBlack.addEventListener("click", changeTheme);
-
-function changeTheme(event = document.createElement("button")) {
-  switch (event.target.className) {
+//  **** Theme Palette ****
+function toggleAClassThroughElements(allElements, clsName, activatedElement) {
+  for (const element of allElements) {
+    if (element.className.includes(clsName)) element.classList.remove(clsName);
+  }
+  activatedElement.classList.add(clsName);
+}
+function getCurrentTheme() {
+  return document.body.classList[0];
+}
+function activateTheme(newTheme) {
+  const currentTheme = getCurrentTheme();
+  const elements = [document.body];
+  elements.push(document.querySelector(".calculator"));
+  elements.push(document.querySelector(".screen .history"));
+  elements.push(document.querySelector(".screen .result"));
+  elements.push(...document.querySelectorAll(".calculator button"));
+  elements.push(document.querySelector("footer"));
+  for (const element of elements) {
+    element.className = element.className.replace(currentTheme, newTheme);
+  }
+}
+function changeTheme(event) {
+  toggleAClassThroughElements(
+    Array.from(document.querySelectorAll(".themePalette button")),
+    "active",
+    event.target
+  );
+  const newTheme = event.target.classList[0];
+  switch (newTheme) {
     case "white":
-      changeTheme2("white");
+      activateTheme("white");
       break;
     case "glass":
-      changeTheme2("glass");
+      activateTheme("glass");
       break;
     case "black":
-      changeTheme2("black");
+      activateTheme("black");
       break;
     default:
       console.log(event.className);
   }
 }
-
-function changeTheme2(newTheme) {
-  const elements = [];
-  elements.push(document.querySelector(".calculator"));
-  elements.push(document.querySelector(".screen .history"));
-  elements.push(document.querySelector(".screen .result"));
-  elements.push(...document.querySelectorAll(".calculator button"));
-  for (const element of elements) {
-    element.className = element.className.replace(currentTheme, newTheme);
-  }
-  currentTheme = newTheme;
+function activateThemePalette() {
+  const themeButtons = document.querySelectorAll(".themePalette button");
+  themeButtons.forEach((element) => {
+    element.addEventListener("click", changeTheme);
+  });
 }
+
+activateThemePalette();
