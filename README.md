@@ -10,9 +10,6 @@
 
 - Basic CSS
 
-### Live Preview
-- [Github Pages](https://mehrab-farhadzadeh.github.io/odin-foundations-calculator/)
-
 ### Credits
 - Background image: [Wallpapers.com](https://wallpapers.com/wallpapers/low-poly-blue-background-5o6wzulr6o47bk0a.html)
 - Calculator UI: Thanks to [Figma](https://www.figma.com/file/KArnfg50SaRrXc4rvJ75YM/Calculator-App-Ui-Design-Free)
