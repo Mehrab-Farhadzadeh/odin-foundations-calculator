@@ -13,3 +13,4 @@
 ### Credits
 - Background image: [Wallpapers.com](https://wallpapers.com/wallpapers/low-poly-blue-background-5o6wzulr6o47bk0a.html)
 - Calculator UI: Thanks to [Figma](https://www.figma.com/file/KArnfg50SaRrXc4rvJ75YM/Calculator-App-Ui-Design-Free)
+- Title icon: [KindPNG.com](https://www.kindpng.com/imgv/iimmhRx_calculator-icon-calculator-app-icon-png-transparent-png/)
