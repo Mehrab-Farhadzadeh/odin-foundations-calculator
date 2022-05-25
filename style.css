@@ -25,6 +25,14 @@ body {
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
 }
+button,
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+}
 
 .calculator {
   margin: 2rem 1rem;
