@@ -26,7 +26,8 @@ body {
   touch-action: manipulation;
 }
 button,
-img {
+img,
+.screen .alert {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
