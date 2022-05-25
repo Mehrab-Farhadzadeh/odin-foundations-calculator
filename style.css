@@ -26,27 +26,27 @@ body {
   touch-action: manipulation;
 }
 
-div.calculator {
+.calculator {
   margin: 2rem 1rem;
   padding: 2rem;
   border-radius: 2.5rem;
   max-width: 40rem;
 }
-div.screen {
+.screen {
   margin: 0rem 0rem 3rem;
   text-align: right;
 }
-div.screen .history {
+.screen .history {
   margin-bottom: 1rem;
   font-size: 1.1rem;
   font-weight: 400;
 }
-div.screen .result {
+.screen .result {
   font-size: 2.5rem;
   font-weight: 500;
 }
 
-div.calculator .buttons {
+.calculator .buttons {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 1.5em 1em;
@@ -103,7 +103,7 @@ footer {
   align-items: center;
   gap: 2.8rem;
 }
-footer div.footer {
+footer .footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +127,7 @@ footer a img:hover {
   box-shadow: 0 0 1rem rgba(75, 189, 255, 0.66),
     inset 0 0 0.4em rgba(59, 183, 255, 0.611);
 }
-footer div.footer p {
+footer .footer p {
   color: #333;
   font-size: x-small;
   margin: 0;
@@ -137,14 +137,14 @@ footer div.footer p {
 }
 
 /* Theme Palette buttons */
-footer div.themePalette {
+footer .themePalette {
   margin-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-footer div.themePalette button {
+footer .themePalette button {
   border-radius: 1.5rem;
   border-style: none;
   width: 3.8rem;
@@ -158,34 +158,34 @@ footer div.themePalette button {
   justify-content: center;
   align-items: center;
 }
-div.themePalette button i,
-div.themePalette button img {
+.themePalette button i,
+.themePalette button img {
   width: 1rem;
   height: auto;
   font-size: 1rem;
 }
-div.themePalette button.white {
+.themePalette button.white {
   color: #2090cc;
   border: 1px #333 solid;
 }
-div.themePalette button.glass {
+.themePalette button.glass {
   background-color: rgba(47, 150, 208, 0.65);
   border: 1px #0e3c56 solid;
 }
-div.themePalette button.black {
+.themePalette button.black {
   background-color: #303136;
   border: 1px #ddd solid;
 }
-div.themePalette button:hover {
+.themePalette button:hover {
   transform: scale(1.1);
 }
-div.themePalette button:active {
+.themePalette button:active {
   transform: scale(0.9);
 }
-div.themePalette button.active:hover,
-div.themePalette button.active:active {
+.themePalette button.active:hover,
+.themePalette button.active:active {
   transform: none;
 }
-div.themePalette button.active {
+.themePalette button.active {
   height: 3rem;
 }
