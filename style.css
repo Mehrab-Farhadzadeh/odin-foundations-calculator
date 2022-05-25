@@ -33,17 +33,28 @@ body {
   max-width: 40rem;
 }
 .screen {
-  margin: 0rem 0rem 3rem;
+  margin: 0rem 0rem 1.8rem;
   text-align: right;
 }
 .screen .history {
+  height: 1.7rem;
   margin-bottom: 1rem;
   font-size: 1.1rem;
   font-weight: 400;
 }
 .screen .result {
+  height: 3.8rem;
   font-size: 2.5rem;
   font-weight: 500;
+}
+.screen .alert {
+  height: 1.2rem;
+  font-size: small;
+  color: darkred;
+  margin: 0;
+}
+.screen.alert {
+  margin-bottom: 1.8rem;
 }
 
 .calculator .buttons {
@@ -52,6 +63,7 @@ body {
   gap: 1.5em 1em;
 }
 .calculator button {
+  transition: all 200ms ease-out;
   color: white;
   border-radius: 1rem;
   border-style: none;
