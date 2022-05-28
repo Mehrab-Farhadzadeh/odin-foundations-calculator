@@ -11,13 +11,13 @@
   box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35),
     inset 0 0 0.2em rgba(5, 44, 66, 0.35);
 }
-.screen .history.glass {
+.screen.glass .history {
   color: #484848;
 }
-.screen .history.glass .operator {
+.screen.glass .history .operator {
   color: #f1f9ff;
 }
-.screen .result.glass {
+.screen.glass .result {
   color: #323232;
 }
 
@@ -78,13 +78,13 @@ footer.glass {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35);
 }
-.screen .history.white {
+.screen.white .history {
   color: #818181;
 }
-.screen .history.white .operator {
+.screen.white .history .operator {
   color: #24a5ff;
 }
-.screen .result.white {
+.screen.white .result {
   color: #424242;
 }
 
@@ -162,14 +162,17 @@ body.black {
   background: linear-gradient(191.34deg, #17181a -4.95%, #17181a 103.74%);
   box-shadow: 0 0 1rem rgba(4, 48, 76, 0.656);
 }
-.screen .history.black {
+.screen.black .history {
   color: #aaa;
 }
-.screen .history.black .operator {
+.screen.black .history .operator {
   color: #24a5ff;
 }
-.screen .result.black {
+.screen.black .result {
   color: #eee;
+}
+.screen.black .alert {
+  color: #d36d6d;
 }
 
 .calculator button.black {
