@@ -170,12 +170,9 @@ const buttonDot = document.getElementById("dot");
 buttonDot.addEventListener("click", (e) => {
    const screen = document.querySelector(".screen .result");
    if (displayedNumber_Global.includes(".")) return;
-   if (getCountOfDigitsBeforeDot(displayedNumber_Global) <= 12) {
-      displayedNumber_Global += e.target.textContent;
-      screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
-   } else {
-      showAlert("Can't enter more than 12 digits.");
-   }
+   if (displayedNumber_Global === "waiting") displayedNumber_Global = "0";
+   displayedNumber_Global += e.target.textContent;
+   screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
 });
 
