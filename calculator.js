@@ -88,7 +88,14 @@ function displayOnScreen(result) {
    screen.textContent = getThousandSeparatedNum(result);
    setResultFontSize(displayedNumber_Global);
 }
-
+function isReallyNaN(result) {
+   return isNaN(parseFloat(result));
+}
+function resetToLastResult(lastResult) {
+   displayedNumber_Global = lastResult;
+   displayOnScreen(lastResult);
+   document.querySelector(".screen .operator").textContent = "";
+}
 // *** mouse ***
 // * numbers *
 function activateNumButton(id) {
@@ -135,6 +142,11 @@ function handleOperatorButton(event) {
       useGrouping: false,
    });
    displayOperatorInHistory(event.target.textContent);
+   if (isReallyNaN(result)) {
+      showAlert("Can't divide by zero.");
+      resetToLastResult(previousEnteredNumber_Global);
+      return;
+   }
    displayOnScreen(result);
    previousEnteredNumber_Global = result;
    displayedNumber_Global = "waiting";
