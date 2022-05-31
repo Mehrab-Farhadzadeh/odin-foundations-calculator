@@ -136,15 +136,15 @@ function activateNumButtons() {
 activateNumButtons();
 
 // * operators *
-function handleOperatorButton(event) {
+function handleOperatorButton(operator) {
    if (getOperatorFromHistory() === "") {
-      displayOperatorInHistory(event.target.textContent);
+      displayOperatorInHistory(operator);
       previousEnteredNumber_Global = displayedNumber_Global;
       displayedNumber_Global = "waiting";
       return;
    }
    if (displayedNumber_Global == "waiting") {
-      displayOperatorInHistory(event.target.textContent);
+      displayOperatorInHistory(operator);
       return;
    }
    const result = operate(
@@ -155,7 +155,7 @@ function handleOperatorButton(event) {
       maximumFractionDigits: 4,
       useGrouping: false,
    });
-   displayOperatorInHistory(event.target.textContent);
+   displayOperatorInHistory(operator);
    if (isReallyNaN(result)) {
       showAlert("Can't divide by zero.");
       resetToLastResult(previousEnteredNumber_Global);
@@ -167,7 +167,9 @@ function handleOperatorButton(event) {
 }
 function activateOperatorButton(id) {
    const opButton = document.getElementById(id);
-   opButton.addEventListener("click", handleOperatorButton);
+   opButton.addEventListener("click", (e) => {
+      handleOperatorButton(e.target.textContent);
+   });
 }
 function activateOperatorButtons() {
    const operatorButtonsId = ["divide", "multiply", "minus", "plus"];
