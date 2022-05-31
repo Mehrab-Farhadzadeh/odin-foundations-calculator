@@ -34,7 +34,10 @@ function activateButtonKeyDown(event) {
       numButton.classList.add("pressed");
       populateScreen(event.key);
    }
-
+   // * operators *
+   if (event.key in ID_S.operators) {
+      handleOperatorButton(event.key);
+   }
    // * equals *
    if (ID_S[event.key] === "equals") equals();
 
