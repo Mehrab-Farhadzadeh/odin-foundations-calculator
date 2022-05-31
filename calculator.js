@@ -58,6 +58,7 @@ function populateScreen(event) {
 function isTooLongToDisplayCalculated(result) {
    if (getCountOfDigitsBeforeDot(result) > 12) {
       showAlert("Calculation outside of accepted range.");
+      resetToLastResult(previousEnteredNumber_Global);
       return true;
    }
    return false;
@@ -83,10 +84,11 @@ function operate(operator, a, b) {
    return result;
 }
 function displayOnScreen(result) {
-   if (isTooLongToDisplayCalculated(result)) return;
+   if (isTooLongToDisplayCalculated(result)) return false;
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(result);
-   setResultFontSize(displayedNumber_Global);
+   setResultFontSize(result);
+   return true;
 }
 function isReallyNaN(result) {
    return isNaN(parseFloat(result));
@@ -147,7 +149,7 @@ function handleOperatorButton(event) {
       resetToLastResult(previousEnteredNumber_Global);
       return;
    }
-   displayOnScreen(result);
+   if (!displayOnScreen(result)) return;
    previousEnteredNumber_Global = result;
    displayedNumber_Global = "waiting";
 }
