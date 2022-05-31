@@ -51,11 +51,11 @@ function getThousandSeparatedNum(number) {
    if (!number.includes(".")) return res;
    return `${res}.${splitted[1]}`;
 }
-function populateScreen(event) {
+function populateScreen(digit) {
    if (isTooLongToDisplay(displayedNumber_Global)) return;
    if (displayedNumber_Global === "0" || displayedNumber_Global === "waiting")
       displayedNumber_Global = "";
-   displayedNumber_Global += event.target.textContent;
+   displayedNumber_Global += digit;
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
@@ -112,7 +112,9 @@ function resetToCalculatedResult(calculatedResult) {
 // * numbers *
 function activateNumButton(id) {
    const numButton = document.getElementById(id);
-   numButton.addEventListener("click", populateScreen);
+   numButton.addEventListener("click", (e) => {
+      populateScreen(e.target.textContent);
+   });
 }
 function activateNumButtons() {
    const numButtonsId = [
