@@ -25,7 +25,12 @@ function showAlert(msg) {
 }
 function setResultFontSize(number) {
    const screen = document.querySelector(".screen .result");
-   if (number.length > 12) screen.style.fontSize = "1.9rem";
+   if (
+      number.length > 12 ||
+      (previousEnteredNumber_Global !== undefined &&
+         previousEnteredNumber_Global.length > 12)
+   )
+      screen.style.fontSize = "1.9rem";
    else screen.style.fontSize = "2.5em";
 }
 function isTooLongToDisplay(number) {
