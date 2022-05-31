@@ -7,11 +7,11 @@ let previousEnteredNumber_Global;
 
 function getCountOfDigitsBeforeDot(str) {
    const splitted = str.split(".");
-   return splitted[0].length;
+   return splitted[0].replace(/[^0-9]/g, "").length;
 }
 function getCountOfDigitsAfterDot(str) {
    const splitted = str.split(".");
-   return splitted[1].length;
+   return splitted[1].replace(/[^0-9]/g, "").length;
 }
 function getDigits(str) {
    return str.replace(/[^0-9]/g, "");
@@ -98,6 +98,11 @@ function resetToLastResult(lastResult) {
    displayOnScreen(lastResult);
    document.querySelector(".screen .operator").textContent = "";
 }
+function resetToCalculatedResult(calculatedResult) {
+   displayedNumber_Global = calculatedResult;
+   displayOnScreen(`=${calculatedResult}`);
+   document.querySelector(".screen .operator").textContent = "";
+}
 // *** mouse ***
 // * numbers *
 function activateNumButton(id) {
@@ -164,6 +169,35 @@ function activateOperatorButtons() {
    }
 }
 activateOperatorButtons();
+
+// * equals *
+const buttonEquals = document.getElementById("equals");
+buttonEquals.addEventListener("click", () => {
+   if (getOperatorFromHistory() === "") {
+      if (!displayedNumber_Global.includes("="))
+         displayOnScreen(`=${displayedNumber_Global}`);
+      return;
+   }
+   if (displayedNumber_Global == "waiting") {
+      showAlert("Invalid format used.");
+      return;
+   }
+   const result = operate(
+      getOperatorFromHistory(),
+      +previousEnteredNumber_Global,
+      +displayedNumber_Global
+   ).toLocaleString(undefined, {
+      maximumFractionDigits: 4,
+      useGrouping: false,
+   });
+   if (isReallyNaN(result)) {
+      showAlert("Can't divide by zero.");
+      resetToLastResult(previousEnteredNumber_Global);
+      return;
+   }
+   if (!displayOnScreen(result)) return;
+   resetToCalculatedResult(result);
+});
 
 // * dot *
 const buttonDot = document.getElementById("dot");
