@@ -27,20 +27,28 @@ const ID_S = {
    },
 };
 
-// * numbers *
-function activateNumButtonKeyDown(event) {
-   if (!(event.key in ID_S.numbers)) return;
-   const numButton = document.getElementById(ID_S.numbers[event.key]);
-   numButton.classList.add("pressed");
-   populateScreen(event.key);
+function activateButtonKeyDown(event) {
+   // * numbers *
+   if (event.key in ID_S.numbers) {
+      const numButton = document.getElementById(ID_S.numbers[event.key]);
+      numButton.classList.add("pressed");
+      populateScreen(event.key);
+   }
+
+   // * backspace *
+   if (ID_S[event.key] === "backspace") backspace();
+
+   // * ac *
+   if (ID_S[event.key] === "ac") ac();
 }
-function activateNumButtonKeyUp(event) {
-   if (!(event.key in ID_S.numbers)) return;
-   const numButton = document.getElementById(ID_S.numbers[event.key]);
-   numButton.classList.remove("pressed");
+function activateButtonKeyUp(event) {
+   if (event.key in ID_S.numbers) {
+      const numButton = document.getElementById(ID_S.numbers[event.key]);
+      numButton.classList.remove("pressed");
+   }
 }
-function activateNumButtonsKeyboard() {
-   window.addEventListener("keydown", activateNumButtonKeyDown);
-   window.addEventListener("keyup", activateNumButtonKeyUp);
+function activateButtonsKeyboard() {
+   window.addEventListener("keydown", activateButtonKeyDown);
+   window.addEventListener("keyup", activateButtonKeyUp);
 }
-activateNumButtonsKeyboard();
+activateButtonsKeyboard();
