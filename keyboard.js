@@ -35,6 +35,12 @@ function activateButtonKeyDown(event) {
       populateScreen(event.key);
    }
 
+   // * equals *
+   if (ID_S[event.key] === "equals") equals();
+
+   // * dot *
+   if (ID_S[event.key] === "dot") dot();
+
    // * backspace *
    if (ID_S[event.key] === "backspace") backspace();
 
