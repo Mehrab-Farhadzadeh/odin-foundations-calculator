@@ -48,7 +48,8 @@ function getThousandSeparatedNum(number) {
 }
 function populateScreen(event) {
    if (isTooLongToDisplay(displayedNumber_Global)) return;
-   if (displayedNumber_Global === "0") displayedNumber_Global = "";
+   if (displayedNumber_Global === "0" || displayedNumber_Global === "waiting")
+      displayedNumber_Global = "";
    displayedNumber_Global += event.target.textContent;
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
@@ -118,7 +119,11 @@ function handleOperatorButton(event) {
    if (getOperatorFromHistory() === "") {
       displayOperatorInHistory(event.target.textContent);
       previousEnteredNumber_Global = displayedNumber_Global;
-      displayedNumber_Global = "0";
+      displayedNumber_Global = "waiting";
+      return;
+   }
+   if (displayedNumber_Global == "waiting") {
+      displayOperatorInHistory(event.target.textContent);
       return;
    }
    const result = operate(
@@ -132,7 +137,7 @@ function handleOperatorButton(event) {
    displayOperatorInHistory(event.target.textContent);
    displayOnScreen(result);
    previousEnteredNumber_Global = result;
-   displayedNumber_Global = "0";
+   displayedNumber_Global = "waiting";
 }
 function activateOperatorButton(id) {
    const opButton = document.getElementById(id);
