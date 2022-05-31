@@ -3,6 +3,7 @@
 // ******************
 
 let displayedNumber_Global = "0";
+let previousEnteredNumber_Global;
 
 function getCountOfDigitsBeforeDot(str) {
    const splitted = str.split(".");
@@ -12,6 +13,9 @@ function getCountOfDigitsAfterDot(str) {
    const splitted = str.split(".");
    return splitted[1].length;
 }
+function getDigits(str) {
+   return str.replace(/[^0-9]/g, "");
+}
 function showAlert(msg) {
    const node = document.querySelector(".screen .alert");
    node.textContent = msg;
@@ -19,18 +23,18 @@ function showAlert(msg) {
       node.textContent = "";
    }, 1500);
 }
-function setResultFontSize(displayedNumber_Global) {
+function setResultFontSize(number) {
    const screen = document.querySelector(".screen .result");
-   if (displayedNumber_Global.length > 12) screen.style.fontSize = "1.9rem";
+   if (number.length > 12) screen.style.fontSize = "1.9rem";
    else screen.style.fontSize = "2.5em";
 }
-function isTooLongToDisplay(displayedNumber_Global) {
-   if (displayedNumber_Global.includes(".")) {
-      if (getCountOfDigitsAfterDot(displayedNumber_Global) > 3) {
+function isTooLongToDisplay(number) {
+   if (number.includes(".")) {
+      if (getCountOfDigitsAfterDot(number) > 3) {
          showAlert("Can't enter more than 4 digits after decimal point.");
          return true;
       }
-   } else if (getCountOfDigitsBeforeDot(displayedNumber_Global) > 11) {
+   } else if (getCountOfDigitsBeforeDot(number) > 11) {
       showAlert("Can't enter more than 12 digits.");
       return true;
    }
@@ -48,6 +52,39 @@ function populateScreen(event) {
    displayedNumber_Global += event.target.textContent;
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
+   setResultFontSize(displayedNumber_Global);
+}
+function isTooLongToDisplayCalculated(result) {
+   if (getCountOfDigitsBeforeDot(result) > 12) {
+      showAlert("Calculation outside of accepted range.");
+      return true;
+   }
+   return false;
+}
+function getOperatorFromHistory() {
+   return document.querySelector(".history span.operator").textContent;
+}
+function displayOperatorInHistory(operator) {
+   const operatorSpan = document.querySelector(".history span.operator");
+   operatorSpan.textContent = operator;
+}
+function operate(operator, a, b) {
+   switch (operator) {
+      case "+":
+         return a + b;
+      case "-":
+         return a - b;
+      case "*":
+         return a * b;
+      case "/":
+         return a / b;
+   }
+   return result;
+}
+function displayOnScreen(result) {
+   if (isTooLongToDisplayCalculated(result)) return;
+   const screen = document.querySelector(".screen .result");
+   screen.textContent = getThousandSeparatedNum(result);
    setResultFontSize(displayedNumber_Global);
 }
 
@@ -75,6 +112,39 @@ function activateNumButtons() {
    }
 }
 activateNumButtons();
+
+// * operators *
+function handleOperatorButton(event) {
+   if (getOperatorFromHistory() === "") {
+      displayOperatorInHistory(event.target.textContent);
+      previousEnteredNumber_Global = displayedNumber_Global;
+      displayedNumber_Global = "0";
+      return;
+   }
+   const result = operate(
+      getOperatorFromHistory(),
+      +previousEnteredNumber_Global,
+      +displayedNumber_Global
+   ).toLocaleString(undefined, {
+      maximumFractionDigits: 4,
+      useGrouping: false,
+   });
+   displayOperatorInHistory(event.target.textContent);
+   displayOnScreen(result);
+   previousEnteredNumber_Global = result;
+   displayedNumber_Global = "0";
+}
+function activateOperatorButton(id) {
+   const opButton = document.getElementById(id);
+   opButton.addEventListener("click", handleOperatorButton);
+}
+function activateOperatorButtons() {
+   const operatorButtonsId = ["divide", "multiply", "minus", "plus"];
+   for (const id of operatorButtonsId) {
+      activateOperatorButton(id);
+   }
+}
+activateOperatorButtons();
 
 // * dot *
 const buttonDot = document.getElementById("dot");
