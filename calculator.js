@@ -178,8 +178,7 @@ function activateOperatorButtons() {
 activateOperatorButtons();
 
 // * equals *
-const buttonEquals = document.getElementById("equals");
-buttonEquals.addEventListener("click", () => {
+function equals() {
    if (getOperatorFromHistory() === "") {
       if (!displayedNumber_Global.includes("="))
          displayOnScreen(`=${displayedNumber_Global}`);
@@ -204,36 +203,41 @@ buttonEquals.addEventListener("click", () => {
    }
    if (!displayOnScreen(result)) return;
    resetToCalculatedResult(result);
-});
+}
+const buttonEquals = document.getElementById("equals");
+buttonEquals.addEventListener("click", equals);
 
 // * dot *
-const buttonDot = document.getElementById("dot");
-buttonDot.addEventListener("click", (e) => {
+function dot() {
    const screen = document.querySelector(".screen .result");
    if (displayedNumber_Global.includes(".")) return;
    if (displayedNumber_Global === "waiting") displayedNumber_Global = "0";
-   displayedNumber_Global += e.target.textContent;
+   displayedNumber_Global += ".";
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
-});
+}
+const buttonDot = document.getElementById("dot");
+buttonDot.addEventListener("click", dot);
 
 // * backspace *
-const buttonBackspace = document.getElementById("backspace");
-buttonBackspace.addEventListener("click", () => {
+function backspace() {
    if (displayedNumber_Global === "0") displayOperatorInHistory("");
    displayedNumber_Global = displayedNumber_Global.slice(0, -1);
    if (displayedNumber_Global === "") displayedNumber_Global = "0";
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
-});
+}
+const buttonBackspace = document.getElementById("backspace");
+buttonBackspace.addEventListener("click", backspace);
 
 // * Ac *
-const buttonAc = document.getElementById("ac");
-buttonAc.addEventListener("click", () => {
+function ac() {
    displayedNumber_Global = "0";
    setResultFontSize(displayedNumber_Global);
    document.querySelector(".screen .result").textContent = "0";
    document.querySelector(".screen .number").textContent = "";
    document.querySelector(".screen .operator").textContent = "";
-});
+}
+const buttonAc = document.getElementById("ac");
+buttonAc.addEventListener("click", ac);
