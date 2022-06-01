@@ -234,6 +234,12 @@ function backspace() {
       if (getOperatorFromHistory() === "") return;
       displayOperatorInHistory("");
    }
+   if (displayedNumber_Global === "waiting") {
+      displayOperatorInHistory("");
+      displayedNumber_Global = previousEnteredNumber_Global;
+      playSoundEffects("backspace");
+      return;
+   }
    displayedNumber_Global = displayedNumber_Global.slice(0, -1);
    if (displayedNumber_Global === "") displayedNumber_Global = "0";
    const screen = document.querySelector(".screen .result");
