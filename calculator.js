@@ -186,11 +186,7 @@ activateOperatorButtons();
 
 // * equals *
 function equals() {
-   if (getOperatorFromHistory() === "") {
-      if (!displayedNumber_Global.includes("="))
-         displayOnScreen(`=${displayedNumber_Global}`);
-      return;
-   }
+   if (getOperatorFromHistory() === "") return;
    if (displayedNumber_Global == "waiting") {
       showAlert("Invalid format used.");
       return;
