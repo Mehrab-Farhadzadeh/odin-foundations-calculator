@@ -1,6 +1,9 @@
 # Calculator
 - [JavaScript Foundations project](https://www.theodinproject.com/lessons/foundations-calculator) on the [TOP](https://www.theodinproject.com/) curriculum.
 
+## Preview
+![themes preview](images/themes.png)
+
 ## Learning Goals
 - Basic JavaScript
   - Loops
