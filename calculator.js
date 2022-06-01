@@ -17,6 +17,7 @@ function getDigits(str) {
    return str.replace(/[^0-9]/g, "");
 }
 function showAlert(msg) {
+   playSoundEffects("error");
    const node = document.querySelector(".screen .alert");
    node.textContent = msg;
    setTimeout(function () {
@@ -59,6 +60,7 @@ function populateScreen(digit) {
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
+   playSoundEffects("default");
 }
 function isTooLongToDisplayCalculated(result) {
    if (getCountOfDigitsBeforeDot(result) > 12) {
@@ -141,10 +143,12 @@ function handleOperatorButton(operator) {
       displayOperatorInHistory(operator);
       previousEnteredNumber_Global = displayedNumber_Global;
       displayedNumber_Global = "waiting";
+      playSoundEffects("default");
       return;
    }
    if (displayedNumber_Global == "waiting") {
       displayOperatorInHistory(operator);
+      playSoundEffects("default");
       return;
    }
    const result = operate(
@@ -164,6 +168,7 @@ function handleOperatorButton(operator) {
    if (!displayOnScreen(result)) return;
    previousEnteredNumber_Global = result;
    displayedNumber_Global = "waiting";
+   playSoundEffects("default");
 }
 function activateOperatorButton(id) {
    const opButton = document.getElementById(id);
@@ -205,6 +210,7 @@ function equals() {
    }
    if (!displayOnScreen(result)) return;
    resetToCalculatedResult(result);
+   playSoundEffects("equals");
 }
 const buttonEquals = document.getElementById("equals");
 buttonEquals.addEventListener("click", equals);
@@ -217,6 +223,7 @@ function dot() {
    displayedNumber_Global += ".";
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
+   playSoundEffects("default");
 }
 const buttonDot = document.getElementById("dot");
 buttonDot.addEventListener("click", dot);
@@ -229,6 +236,7 @@ function backspace() {
    const screen = document.querySelector(".screen .result");
    screen.textContent = getThousandSeparatedNum(displayedNumber_Global);
    setResultFontSize(displayedNumber_Global);
+   playSoundEffects("backspace");
 }
 const buttonBackspace = document.getElementById("backspace");
 buttonBackspace.addEventListener("click", backspace);
@@ -240,6 +248,7 @@ function ac() {
    document.querySelector(".screen .result").textContent = "0";
    document.querySelector(".screen .number").textContent = "";
    document.querySelector(".screen .operator").textContent = "";
+   playSoundEffects("ac");
 }
 const buttonAc = document.getElementById("ac");
 buttonAc.addEventListener("click", ac);

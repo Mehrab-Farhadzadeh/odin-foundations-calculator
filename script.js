@@ -39,3 +39,14 @@ function activateThemePalette() {
 }
 
 activateThemePalette();
+
+// ***********************
+// **** Sound Effects ****
+// ***********************
+function playSoundEffects(cls) {
+   const currentTheme = getCurrentTheme();
+   const audio = document.querySelector(`audio.${cls}.${currentTheme}`);
+   if (!audio) console.log("Audio not found.");
+   audio.currentTime = 0;
+   audio.play();
+}
