@@ -230,7 +230,10 @@ buttonDot.addEventListener("click", dot);
 
 // * backspace *
 function backspace() {
-   if (displayedNumber_Global === "0") displayOperatorInHistory("");
+   if (displayedNumber_Global === "0") {
+      if (getOperatorFromHistory() === "") return;
+      displayOperatorInHistory("");
+   }
    displayedNumber_Global = displayedNumber_Global.slice(0, -1);
    if (displayedNumber_Global === "") displayedNumber_Global = "0";
    const screen = document.querySelector(".screen .result");
