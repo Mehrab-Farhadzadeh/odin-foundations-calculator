@@ -110,7 +110,11 @@ function resetToCalculatedResult(calculatedResult) {
    displayOnScreen(`=${calculatedResult}`);
    document.querySelector(".screen .operator").textContent = "";
 }
-// *** mouse ***
+
+// ***********
+// ** Mouse **
+// ***********
+
 // * numbers *
 function activateNumButton(id) {
    const numButton = document.getElementById(id);
