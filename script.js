@@ -64,7 +64,7 @@ soundProfileButton.addEventListener("click", applyChosenSoundProfile);
 
 function playSoundEffects(cls) {
    if (soundProfile === "volume_off") return;
-   if (soundProfile === "volume_down") cls = "default";
+   if (soundProfile === "volume_down" && cls !== "error") cls = "default";
    const currentTheme = getCurrentTheme();
    const audio = document.querySelector(`audio.${cls}.${currentTheme}`);
    if (!audio) console.log("Audio not found.");
