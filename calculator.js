@@ -46,6 +46,10 @@ function isTooLongToDisplay(number) {
    }
    return false;
 }
+function displayNumberInHistory(number) {
+   const numberSpan = document.querySelector(".history span.number");
+   numberSpan.textContent = number;
+}
 function getThousandSeparatedNum(number) {
    const splitted = number.split(".");
    const res = splitted[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -104,11 +108,13 @@ function resetToLastResult(lastResult) {
    displayedNumber_Global = lastResult;
    displayOnScreen(lastResult);
    document.querySelector(".screen .operator").textContent = "";
+   displayNumberInHistory("");
 }
 function resetToCalculatedResult(calculatedResult) {
    displayedNumber_Global = calculatedResult;
    displayOnScreen(`=${calculatedResult}`);
    document.querySelector(".screen .operator").textContent = "";
+   displayNumberInHistory("");
 }
 
 // ***********
@@ -148,11 +154,13 @@ function handleOperatorButton(operator) {
       previousEnteredNumber_Global = displayedNumber_Global;
       displayedNumber_Global = "waiting";
       playSoundEffects("default");
+      displayNumberInHistory(previousEnteredNumber_Global);
       return;
    }
-   if (displayedNumber_Global == "waiting") {
+   if (displayedNumber_Global === "waiting") {
       displayOperatorInHistory(operator);
       playSoundEffects("default");
+      displayNumberInHistory(previousEnteredNumber_Global);
       return;
    }
    const result = operate(
@@ -172,6 +180,7 @@ function handleOperatorButton(operator) {
    if (!displayOnScreen(result)) return;
    previousEnteredNumber_Global = result;
    displayedNumber_Global = "waiting";
+   displayNumberInHistory(previousEnteredNumber_Global);
    playSoundEffects("default");
 }
 function activateOperatorButton(id) {
@@ -191,7 +200,7 @@ activateOperatorButtons();
 // * equals *
 function equals() {
    if (getOperatorFromHistory() === "") return;
-   if (displayedNumber_Global == "waiting") {
+   if (displayedNumber_Global === "waiting") {
       showAlert("Invalid format used.");
       return;
    }
@@ -233,9 +242,11 @@ function backspace() {
    if (displayedNumber_Global === "0") {
       if (getOperatorFromHistory() === "") return;
       displayOperatorInHistory("");
+      displayNumberInHistory("");
    }
    if (displayedNumber_Global === "waiting") {
       displayOperatorInHistory("");
+      displayNumberInHistory("");
       displayedNumber_Global = previousEnteredNumber_Global;
       playSoundEffects("backspace");
       return;
