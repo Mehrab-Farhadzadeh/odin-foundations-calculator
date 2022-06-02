@@ -210,3 +210,21 @@ footer .themePalette button {
 .themePalette button.active {
   height: 3rem;
 }
+
+.sound-profile {
+  margin: -2rem -1.4rem;
+  width: 4rem;
+  height: 4rem;
+}
+.sound-profile button {
+  min-width: 4rem;
+  min-height: 4rem;
+  background-color: transparent;
+  border: none;
+}
+.sound-profile button:hover {
+  transform: scale(1.15);
+}
+.sound-profile button:active {
+  transform: none;
+}

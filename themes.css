@@ -78,6 +78,9 @@ footer.glass {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 1rem rgba(5, 44, 66, 0.35);
 }
+.calculator.white .sound-profile button {
+  color: #424242;
+}
 .screen.white .history {
   color: #818181;
 }

@@ -43,7 +43,28 @@ activateThemePalette();
 // ***********************
 // **** Sound Effects ****
 // ***********************
+
+let soundProfile = "volume_up";
+const soundProfileButton = document.querySelector(".sound-profile button");
+function applyChosenSoundProfile() {
+   const i = this.querySelector("i");
+   soundProfile = i.textContent;
+   if (soundProfile === "volume_up") {
+      soundProfile = "volume_off";
+   } else if (soundProfile === "volume_down") {
+      soundProfile = "volume_up";
+      playSoundEffects("ac");
+   } else if (soundProfile === "volume_off") {
+      soundProfile = "volume_down";
+      playSoundEffects("default");
+   }
+   i.textContent = soundProfile;
+}
+soundProfileButton.addEventListener("click", applyChosenSoundProfile);
+
 function playSoundEffects(cls) {
+   if (soundProfile === "volume_off") return;
+   if (soundProfile === "volume_down") cls = "default";
    const currentTheme = getCurrentTheme();
    const audio = document.querySelector(`audio.${cls}.${currentTheme}`);
    if (!audio) console.log("Audio not found.");
