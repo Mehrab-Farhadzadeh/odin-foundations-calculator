@@ -62,9 +62,6 @@ img,
   color: darkred;
   margin: 0;
 }
-.screen.alert {
-  margin-bottom: 1.8rem;
-}
 
 .calculator .buttons {
   display: grid;
