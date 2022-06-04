@@ -18,3 +18,10 @@
 - Calculator UI: Thanks to [Figma](https://www.figma.com/file/KArnfg50SaRrXc4rvJ75YM/Calculator-App-Ui-Design-Free)
 - Title icon: [KindPNG.com](https://www.kindpng.com/imgv/iimmhRx_calculator-icon-calculator-app-icon-png-transparent-png/)
 - Sound effects: [MixKit.co](https://mixkit.co/free-sound-effects/click/)
+
+### To Do, Design
+- Grow the + button height and shrink the height of the = button so they have the same height.
+
+### To Do, Logic
+- Display history.
+- Refactoring the code.
