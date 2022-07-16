@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+html {
+  font-size: 11px;
+}
 * {
   box-sizing: border-box;
   transition: all 200ms ease-out;
@@ -224,4 +227,7 @@ footer .themePalette button {
 }
 .sound-profile button:active {
   transform: none;
+}
+.sound-profile button i {
+  font-size: 1.5rem;
 }
